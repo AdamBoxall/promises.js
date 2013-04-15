@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Promises Demo</title>
+        <script src="js/promises.js"></script>
+        <script>
+
+            window.addEventListener('load', runTest, false);
+
+            function runTest() {
+
+                var promises = [firstTimer, secondTimer];
+
+                when(promises).done(function() {
+                    output('All promises have been resolved');
+                });
+            }
+
+            function firstTimer(promise) {
+
+                setTimeout(function() {
+                    promise.resolve();
+                    output('First timer resolved');
+                }, 3000);
+
+                return promise;
+            }
+
+            function secondTimer(promise) {
+
+                setTimeout(function() {
+                    promise.resolve();
+                    output('Second timer resolved');
+                }, 1000);
+
+                return promise;
+            }
+
+            function output(str) {
+                document.getElementById('output').innerHTML += str;
+            }
+
+        </script>
+    </head>
+    <body>
+        <div id="output"></div>
+    </body>
+</html>
