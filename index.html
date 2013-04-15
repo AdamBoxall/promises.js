@@ -19,25 +19,21 @@
             function firstTimer(promise) {
 
                 setTimeout(function() {
-                    promise.resolve();
                     output('First timer resolved');
+                    promise.resolve();
                 }, 3000);
-
-                return promise;
             }
 
             function secondTimer(promise) {
 
                 setTimeout(function() {
-                    promise.resolve();
                     output('Second timer resolved');
+                    promise.resolve();
                 }, 1000);
-
-                return promise;
             }
 
             function output(str) {
-                document.getElementById('output').innerHTML += str;
+                document.getElementById('output').innerHTML += str + '<br>';
             }
 
         </script>
