@@ -12,7 +12,7 @@ There are already alternatives out there, namely jQuery's Deferred object, howev
 
 First, download promises.js and include it into your document:
 
-    <script src="/path/to/js/promises.js"></script>
+    <script src="/path/to/js/promises.min.js"></script>
 
 promises.js exposes only one global function `when()`, to avoid name collisions as much as possible. You can either pass a single callable function or an array of them, and in return you will be passed back a simple object containing a `done()` method:
 

@@ -10,13 +10,11 @@ function when(resolvers) {
     }
 
     Promise.prototype = {
-
         resolve: function() {
             if (this.notify) {
                 this.notify(this);
             }
         },
-
         subscribe: function(notify) {
             this.notify = notify;
             return this;
