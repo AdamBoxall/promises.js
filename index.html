@@ -16,19 +16,19 @@
                 });
             }
 
-            function firstTimer(promise) {
+            function firstTimer(resolve) {
 
                 setTimeout(function() {
                     output('First timer resolved');
-                    promise.resolve();
+                    resolve();
                 }, 3000);
             }
 
-            function secondTimer(promise) {
+            function secondTimer(resolve) {
 
                 setTimeout(function() {
                     output('Second timer resolved');
-                    promise.resolve();
+                    resolve();
                 }, 1000);
             }
 

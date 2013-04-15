@@ -22,19 +22,19 @@ promises.js exposes only one global function `when()`, to avoid name collisions 
     // A single function
     when(funcSingle).done(...);
 
-The functions above will all be passed a `promise` object containing a `resolve()` method to mark the fork as resolved:
+The functions above will all be passed a `resolve()` function to mark the fork as resolved when invoked:
 
     // Wait a second then mark the promise as resolved
-    function funcSingle(promise) {
+    function funcSingle(resolve) {
         setTimeout(function() {
-            promise.resolved();
+            resolve();
         }, 1000)
     }
 
-Once all the functions passed to `when` have been resolved, the callback passed to `done()` is then invoked:
+Once all the functions passed to `when()` have been resolved, the callback passed to `done()` is then invoked:
 
     when([funcOne, funcTwo]).done(function() {
         // Once this is called you know all promises have been resolved
     });
 
-And that's it! There's a working example in `/index.html` of this repository.
+And that's it! There's a working example in `/index.html` of this repository if you want to see everything in action.

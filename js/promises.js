@@ -6,7 +6,7 @@ function when(resolvers) {
     var complete;
 
     function Promise(resolver) {
-        resolver(this);
+        resolver(this.resolve.bind(this));
     }
 
     Promise.prototype = {
