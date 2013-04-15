@@ -7,13 +7,13 @@ function Promise(callback) {
 Promise.prototype = {
 
     resolve: function() {
-        if (this.notifyCallback) {
-            this.notifyCallback(this.promise);
+        if (this.notify) {
+            this.notify(this.promise);
         }
     },
 
-    subscribe: function(callback) {
-        this.notifyCallback = callback;
+    subscribe: function(notify) {
+        this.notify = notify;
         return this;
     }
 }
@@ -24,16 +24,24 @@ function when(resolvers) {
     var resolved = [];
 
     resolvers.forEach(function(resolver) {
-        var promise = (new Promise(resolver)).subscribe(resolve);
+        promises.push((new Promise(resolver)).subscribe(resolve));
     });
 
     function resolve() {
-        if ()
+        var index = this.promises.indexOf(promise);
+        if (index !== -1) {
+            resolved.push(promises.splice(index, 1));
+            if (promises.length === 0) {
+                doneCallback();
+            }
+        }
     }
 
-    return {
-        done: function(doneCallback) {
+    var doneCallback;
 
+    return {
+        done: function(callback) {
+            doneCallback = callback;
         }
     }
 }
