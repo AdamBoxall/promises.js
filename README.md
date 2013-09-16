@@ -14,7 +14,7 @@ There are already alternatives out there, namely jQuery's Deferred object, howev
 
 #### Window
 
-Just download `promises.min.js` and include the minified script it into your document:
+Just download `promises.min.js` and include the script into your document:
 
     <script src="/path/to/src/promises.min.js"></script>
 
@@ -40,7 +40,7 @@ The functions above will all be passed a `resolve()` function to mark the fork a
     function funcSingle(resolve) {
         setTimeout(function() {
             resolve();
-        }, 1000)
+        }, 1000);
     }
 
 Once all the functions passed to `when()` have been resolved, the callback passed to `done()` is then invoked:
