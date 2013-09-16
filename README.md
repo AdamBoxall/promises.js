@@ -1,6 +1,8 @@
-# JavaScript Promises
+**Please note that this module is not compatible with the [Promises/A+ specification](http://promises-aplus.github.io/promises-spec/). When I get some time I will update it.**
 
-## A minimalist JavaScript promise framework
+# promises.js
+
+## A simple, AMD-compatible JavaScript promises module
 
 ### What's that?
 
@@ -8,13 +10,23 @@ When dealing with a lot of asynchronous JavaScript you can quite often find your
 
 There are already alternatives out there, namely jQuery's Deferred object, however defining your own promises is a bit clunky I've found from recent experience. This API is meant to be as simple and intuitive as possible, and in the not too distant future compatible with jQuery as well.
 
+### Installation
+
+#### Window
+
+Just download `promises.min.js` and include the minified script it into your document:
+
+    <script src="/path/to/src/promises.min.js"></script>
+
+That's it.
+
+#### AMD
+
+Download `promises.min.js` into your modules directory and then tell RequireJS about it. Check the [RequireJS documentation](http://requirejs.org/) for more help with AMD.
+
 ### Usage
 
-First, download promises.js and include it into your document:
-
-    <script src="/path/to/js/promises.min.js"></script>
-
-promises.js exposes only one global function `when()`, to avoid name collisions as much as possible. You can either pass a single callable function or an array of them, and in return you will be passed back a simple object containing a `done()` method:
+promises.js exposes only one global function `when()`, to avoid name collisions as much as possible when used without AMD. You can either pass a single callable function or an array of them, and in return you will be passed back a simple object containing a `done()` method:
 
     // An array of functions
     when([funcOne, funcTwo]).done(...);
