@@ -19,7 +19,7 @@
             function firstTimer(resolve) {
 
                 setTimeout(function() {
-                    output('First timer resolved');
+                    output('First timer resolved after 3 seconds');
                     resolve();
                 }, 3000);
             }
@@ -27,12 +27,13 @@
             function secondTimer(resolve) {
 
                 setTimeout(function() {
-                    output('Second timer resolved');
+                    output('Second timer resolved after 1 second');
                     resolve();
                 }, 1000);
             }
 
             function output(str) {
+
                 document.getElementById('output').innerHTML += str + '<br>';
             }
 

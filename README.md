@@ -49,4 +49,4 @@ Once all the functions passed to `when()` have been resolved, the callback passe
         // Once this is called you know all promises have been resolved
     });
 
-And that's it! There's a working example in `/index.html` of this repository if you want to see everything in action.
+And that's it! There's a working example in `/index.html` of this repository if you want to see it in action.
